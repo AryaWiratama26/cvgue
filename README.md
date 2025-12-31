@@ -1,10 +1,8 @@
 <div style="text-align: center;">
-    <img src="img/cvgue_logo.png" alt="cvgue_logo">
-    <p>CVGUE</p>
+    <img src="img/cvgue_logo.png" alt="cvgue_logo" style="border-radius: 30%;">
 </div>
 
 ### Why the name CVGue?
+CVGue is a portmanteau of "Curriculum Vitae" and "me" in Indonesian slang.
 
-- **CV** stands for *Curriculum Vitae*
-- **Gue** is Indonesian slang meaning *“me”*
 
