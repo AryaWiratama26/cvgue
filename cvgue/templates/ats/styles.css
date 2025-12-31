@@ -1,0 +1,126 @@
+@page {
+  
+  size: A4;
+  margin: 0.3in 0.4in;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 10.5pt;
+  color: #000;
+  line-height: 1.25;
+  max-width: 21cm;
+  margin: 0 auto;
+  padding: 0.3in;
+}
+
+
+
+.name {
+
+  text-align: center;
+  font-size: 18pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.contact {
+  text-align: center;
+  font-size: 9pt;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.contact a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+
+h2 {
+
+  font-size: 11pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid #000;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding-bottom: 1px;
+  letter-spacing: 0.5px;
+
+}
+
+
+
+.summary {
+  margin-bottom: 6px;
+  text-align: justify;
+}
+
+
+.row {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0;
+}
+
+.row strong {
+  font-size: 10.5pt;
+}
+
+.row .location {
+  font-weight: normal;
+}
+
+.date {
+  font-weight: normal;
+  font-style: italic;
+  text-align: right;
+  white-space: nowrap;
+  font-size: 10pt;
+}
+
+
+.entry-subtitle {
+
+  font-style: italic;
+  margin-bottom: 1px;
+}
+
+.entry-gpa {
+  margin-bottom: 3px;
+}
+
+
+ul {
+  margin-top: 1px;
+  margin-bottom: 6px;
+  padding-left: 18px;
+  list-style-type: disc;
+
+}
+
+li {
+  margin-bottom: 1px;
+  text-align: justify;
+}
+
+
+p {
+
+  margin: 1px 0;
+}
+
+em {
+  font-style: italic;
+}

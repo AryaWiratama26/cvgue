@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- ATS TITLE -->
+    <title>{{ name }} - CV</title>
+
+    <!-- ATS CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ATS HEADER -->
+    <h1 class="name">{{ name }}</h1>
+    <p class="contact">
+
+        {{ location }} | {{ email }}<br>
+        {{ phone }} | {{ linkedin }} | {{ website }}
+    </p>
+
+    <!-- ATS PROFESSIONAL SUMMARY -->
+    <h2>PROFESSIONAL SUMMARY</h2>
+    <p class="summary">{{ summary }}</p>
+
+    <!-- ATS EDUCATION -->
+    <h2>EDUCATION</h2>
+    {% for edu in education %}
+    <div class="row">
+        <strong>{{ edu.institution }},</strong>&nbsp;<span class="location">{{ edu.location | default('') }}</span>
+        <span class="date">{{ edu.period }}</span>
+    </div>
+    <p class="entry-subtitle">{{ edu.degree }}</p>
+    <p class="entry-gpa">GPA {{ edu.gpa }}</p>
+    {% endfor %}
+
+    <!-- ATS WORK EXPERIENCE -->
+    <h2>WORK EXPERIENCE</h2>
+    {% for exp in experience %}
+    <div class="row">
+        <strong>{{ exp.role }} | {{ exp.company }},</strong>&nbsp;<span class="location">{{ exp.location | default('')
+            }}</span>
+        <span class="date">{{ exp.period }}</span>
+    </div>
+    <ul>
+        {% for point in exp.points %}
+        <li>{{ point }}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+
+    <!-- ATS ORGANIZATIONAL EXPERIENCE -->
+    <h2>ORGANIZATIONAL EXPERIENCE</h2>
+    {% for org in organizations %}
+
+    <div class="row">
+        <strong>{{ org.role }} | {{ org.organization }},</strong>&nbsp;<span class="location">{{ org.location |
+            default('') }}</span>
+        <span class="date">{{ org.period }}</span>
+    </div>
+    <ul>
+        {% for point in org.points %}
+        <li>{{ point }}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+
+
+    <!-- ATS PROJECTS -->
+    <h2>PROJECTS</h2>
+    {% for project in projects %}
+    <div class="row">
+
+        <strong>{{ project.title }}</strong>&nbsp;| {{ project.stack }}
+        <span class="date">{{ project.date }}</span>
+    </div>
+    <ul>
+        {% for point in project.points %}
+        <li>{{ point }}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+
+
+
+    <!-- ATS SKILLS & CERTIFICATIONS -->
+    <h2>SKILLS & CERTIFICATIONS</h2>
+    <ul>
+        <li><strong>Hard Skill:</strong> {{ skills.hard | join(", ") }}.</li>
+        <li><strong>Soft Skill:</strong> {{ skills.soft | join(", ") }}.</li>
+        <li><strong>Certifications:</strong> {{ certifications | join(", ") }}.</li>
+        <li><strong>Language:</strong> {{ languages | join(", ") }}.</li>
+    </ul>
+
+</body>
+
+</html>
