@@ -1,4 +1,12 @@
 venv/
 __pycache__
+
+# Example files
 *.pdf
 example.py
+
+# Sh files to push to PyPI
+up_to_pypi.sh
+
+# Docs website
+cvgue_docs_website
