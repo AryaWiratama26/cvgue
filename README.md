@@ -1,8 +1,5 @@
 <div align="center">
-  <img src="img/cvgue_logo.png"
-       width="250"
-       height="250"
-       style="border-radius: 50%;">
+  <img src="img/cvgue_logo_rounded.png">
 </div>
 
 
