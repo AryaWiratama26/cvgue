@@ -14,34 +14,45 @@
 <body>
 
     <!-- ATS HEADER -->
+    {% if name %}
     <h1 class="name">{{ name }}</h1>
+    {% endif %}
+    {% if contact %}
     <p class="contact">
-
-        {{ location }} | {{ email }}<br>
-        {{ phone }} | {{ linkedin }} | {{ website }}
+        {% if location %}{{ location }} | {% endif %}
+        {% if email %}{{ email }}<br>{% endif %}
+        {% if phone %}{{ phone }} | {% endif %}
+        {% if linkedin %}{{ linkedin }} | {% endif %}
+        {% if website %}{{ website }}{% endif %}
     </p>
+    {% endif %}
 
     <!-- ATS PROFESSIONAL SUMMARY -->
+    {% if summary %}
     <h2>PROFESSIONAL SUMMARY</h2>
     <p class="summary">{{ summary }}</p>
+    {% endif %}
 
     <!-- ATS EDUCATION -->
+    {% if education %}
     <h2>EDUCATION</h2>
     {% for edu in education %}
     <div class="row">
-        <strong>{{ edu.institution }},</strong>&nbsp;<span class="location">{{ edu.location | default('') }}</span>
+        <strong>{{ edu.institution }},</strong>&nbsp;<span class="location">{{ edu.location }}</span>
         <span class="date">{{ edu.period }}</span>
     </div>
     <p class="entry-subtitle">{{ edu.degree }}</p>
     <p class="entry-gpa">GPA {{ edu.gpa }}</p>
     {% endfor %}
+    {% endif %}
 
+    
     <!-- ATS WORK EXPERIENCE -->
+    {% if experience %}
     <h2>WORK EXPERIENCE</h2>
     {% for exp in experience %}
     <div class="row">
-        <strong>{{ exp.role }} | {{ exp.company }},</strong>&nbsp;<span class="location">{{ exp.location | default('')
-            }}</span>
+        <strong>{{ exp.role }} | {{ exp.company }},</strong>&nbsp;<span class="location">{{ exp.location }}</span>
         <span class="date">{{ exp.period }}</span>
     </div>
     <ul>
@@ -50,14 +61,16 @@
         {% endfor %}
     </ul>
     {% endfor %}
+    {% endif %}
 
+    
     <!-- ATS ORGANIZATIONAL EXPERIENCE -->
+    {% if organizations %}
     <h2>ORGANIZATIONAL EXPERIENCE</h2>
     {% for org in organizations %}
 
     <div class="row">
-        <strong>{{ org.role }} | {{ org.organization }},</strong>&nbsp;<span class="location">{{ org.location |
-            default('') }}</span>
+        <strong>{{ org.role }} | {{ org.organization }},</strong>&nbsp;<span class="location">{{ org.location }}</span>
         <span class="date">{{ org.period }}</span>
     </div>
     <ul>
@@ -66,9 +79,10 @@
         {% endfor %}
     </ul>
     {% endfor %}
-
+    {% endif %}
 
     <!-- ATS PROJECTS -->
+    {% if projects %}
     <h2>PROJECTS</h2>
     {% for project in projects %}
     <div class="row">
@@ -82,18 +96,30 @@
         {% endfor %}
     </ul>
     {% endfor %}
-
+    {% endif %}
 
 
     <!-- ATS SKILLS & CERTIFICATIONS -->
+    {% if skills or certifications or languages %}
+
     <h2>SKILLS & CERTIFICATIONS</h2>
     <ul>
+        {% if skills %}
+        {% if skills.hard %}
         <li><strong>Hard Skill:</strong> {{ skills.hard | join(", ") }}.</li>
+        {% endif %}
+        {% if skills.soft %}
         <li><strong>Soft Skill:</strong> {{ skills.soft | join(", ") }}.</li>
+        {% endif %}
+        {% endif %}
+        {% if certifications %}
         <li><strong>Certifications:</strong> {{ certifications | join(", ") }}.</li>
+        {% endif %}
+        {% if languages %}
         <li><strong>Language:</strong> {{ languages | join(", ") }}.</li>
+        {% endif %}
     </ul>
-
+    {% endif %}
 </body>
 
 </html>
