@@ -15,12 +15,11 @@ pip install cvgue
 
 ### Available Templates
 
-```python
 | Template | Description |
 | --- | --- |
 | ATS | ATS-friendly CV template (optimized for applicant tracking systems) |
 | Creative | Creative CV template (modern & visually expressive) |
-```
+
 
 ### Usage
 
