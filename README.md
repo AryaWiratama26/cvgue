@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="img/cvgue_logo_rounded.png">
+  <img src="img/cvgue_logo_rounded.webp">
 </div>
 
 
