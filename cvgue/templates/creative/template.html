@@ -1,13 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
 
-    Coming soon.....
+    
+    <!-- CREATIVE CV TITLE -->
+    <title>{{ name }} - Creative CV</title>
+
+    <!-- CREATIVE CV CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <!-- Creative Sidebar -->
+        <aside class="sidebar">
+
+
+            
+            <!-- Creative Profile Photo -->
+            {% if photo %}
+            <div class="profile-section">
+                <div class="profile-photo">
+                    <img src="{{ photo }}" alt="{{ name }}">
+                </div>
+            </div>
+            {% endif %}
+
+
+            <!-- Creative Contact Section -->
+
+            {% if email or phone or location or website %}
+
+            <div class="sidebar-section">
+                <h2 class="section-title">Contact</h2>
+                <ul class="contact-list">
+                    {% if email %}
+                    <li>
+                        <span class="icon">✉</span>
+                        <span>{{ email }}</span>
+                    </li>
+                    {% endif %}
+                    {% if phone %}
+                    <li>
+                        <span class="icon">☎</span>
+                        <span>{{ phone }}</span>
+                    </li>
+                    {% endif %}
+                    {% if location %}
+                    <li>
+
+                        <span class="icon">📍</span>
+                        <span>{{ location }}</span>
+                    </li>
+                    {% endif %}
+                    {% if website %}
+                    <li>
+                        <span class="icon">🌐</span>
+                        <span>{{ website }}</span>
+                    </li>
+                    {% endif %}
+                    {% if linkedin %}
+                    <li>
+                        <span class="icon">🔗</span>
+                        <span>{{ linkedin }}</span>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            {% endif %}
+
+
+
+            <!-- Creative Education Section -->
+
+            {% if education %}
+            <div class="sidebar-section">
+                <h2 class="section-title">Education</h2>
+                {% for edu in education %}
+                <div class="education-item">
+                    <h3>{{ edu.degree }}</h3>
+                    <p class="institution">{{ edu.institution }}</p>
+                    <p class="year">{{ edu.period }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <!-- Creative Skills Section -->
+
+            {% if skills %}
+            <div class="sidebar-section">
+                <h2 class="section-title">Skills</h2>
+
+                <ul class="skills-list">
+                    {% if skills.hard %}
+                    {% for skill in skills.hard %}
+                    <li><span class="bullet">•</span> {{ skill }}</li>
+                    {% endfor %}
+                    {% endif %}
+                    {% if skills.soft %}
+                    {% for skill in skills.soft %}
+                    <li><span class="bullet">•</span> {{ skill }}</li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+            {% endif %}
+
+
+
+            <!-- Certifications Section -->
+
+            {% if certifications %}
+            <div class="sidebar-section">
+                <h2 class="section-title">Certifications</h2>
+                <ul class="certifications-list">
+                    {% for cert in certifications %}
+                    <li>{{ cert }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+
+            <!-- Language Section -->
+
+            {% if languages %}
+            <div class="sidebar-section">
+                <h2 class="section-title">Language</h2>
+                <ul class="language-list">
+                    {% for lang in languages %}
+                    <li>{{ lang }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% endif %}
+
+        </aside>
+
+        <!-- Creative Main Content -->
+        <main class="main-content">
+
+
+            <!-- Creative Header -->
+            <header class="cv-header">
+                {% if name %}
+                <h1 class="name">{{ name }}</h1>
+                {% endif %}
+                {% if title %}
+                <p class="job-title">{{ title }}</p>
+                {% endif %}
+
+            </header>
+
+            <!-- Creative About Me / Summary Section -->
+
+            {% if summary %}
+            <section class="content-section">
+                <h2 class="content-title">About Me</h2>
+                <p class="about-text">{{ summary }}</p>
+            </section>
+            {% endif %}
+
+            
+
+            <!-- Creative Work Experience Section -->
+            {% if experience %}
+            <section class="content-section">
+                <h2 class="content-title">Work Experience</h2>
+                {% for exp in experience %}
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <span class="date">{{ exp.period }}</span>
+                        <span class="company">{{ exp.company }}</span>
+                    </div>
+                    <h3 class="position">{{ exp.role }}</h3>
+                    {% if exp.points %}
+                    <ul class="experience-details">
+                        {% for point in exp.points %}
+                        <li>{{ point }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </section>
+            {% endif %}
+
+            <!-- Organizational Experience Section -->
+
+            {% if organizations %}
+            <section class="content-section">
+                <h2 class="content-title">Organizational Experience</h2>
+                {% for org in organizations %}
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <span class="date">{{ org.period }}</span>
+                        <span class="company">{{ org.organization }}</span>
+                    </div>
+                    <h3 class="position">{{ org.role }}</h3>
+                    {% if org.points %}
+                    <ul class="experience-details">
+                        {% for point in org.points %}
+                        <li>{{ point }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </section>
+            {% endif %}
+
+
+
+            <!-- Projects Section -->
+            {% if projects %}
+            <section class="content-section">
+                <h2 class="content-title">Projects</h2>
+                {% for project in projects %}
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <span class="date">{{ project.date }}</span>
+                        <span class="company">{{ project.stack }}</span>
+                    </div>
+                    <h3 class="position">{{ project.title }}</h3>
+                    {% if project.points %}
+                    <ul class="experience-details">
+                        {% for point in project.points %}
+                        <li>{{ point }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </section>
+            {% endif %}
+
+
+            <!-- References Section -->
+            {% if references %}
+            <section class="content-section">
+
+                <h2 class="content-title">References</h2>
+                <div class="references-grid">
+                    {% for ref in references %}
+                    <div class="reference-item">
+                        <h3 class="reference-name">{{ ref.name }}</h3>
+
+                        <p class="reference-position">{{ ref.company }} / {{ ref.position }}</p>
+                        {% if ref.phone %}
+                        <p class="reference-contact"><strong>Phone:</strong> {{ ref.phone }}</p>
+                        {% endif %}
+                        {% if ref.email %}
+                        <p class="reference-contact"><strong>Email:</strong> {{ ref.email }}</p>
+                        {% endif %}
+                    </div>
+
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+
+
+        </main>
+    </div>
 </body>
+
+
 </html>
