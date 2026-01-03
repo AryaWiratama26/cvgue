@@ -1,5 +1,5 @@
 @page {
-  
+
   size: A4;
   margin: 0.3in 0.4in;
 }
@@ -69,7 +69,6 @@ h2 {
 .row {
 
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
   margin-bottom: 0;
 }
@@ -82,12 +81,27 @@ h2 {
   font-weight: normal;
 }
 
+.entry-info {
+  display: inline;
+  flex-shrink: 1;
+}
+
+.project-info {
+  display: inline;
+  flex-shrink: 1;
+}
+
+.stack {
+  font-weight: normal;
+}
+
 .date {
   font-weight: normal;
   font-style: italic;
   text-align: right;
   white-space: nowrap;
   font-size: 10pt;
+  margin-left: auto;
 }
 
 

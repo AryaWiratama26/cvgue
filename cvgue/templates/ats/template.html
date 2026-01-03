@@ -38,7 +38,9 @@
     <h2>EDUCATION</h2>
     {% for edu in education %}
     <div class="row">
-        <strong>{{ edu.institution }},</strong>&nbsp;<span class="location">{{ edu.location }}</span>
+        <div class="entry-info">
+            <strong>{{ edu.institution }}</strong>&nbsp;<span class="location">{{ edu.location }}</span>
+        </div>
         <span class="date">{{ edu.period }}</span>
     </div>
     <p class="entry-subtitle">{{ edu.degree }}</p>
@@ -46,13 +48,15 @@
     {% endfor %}
     {% endif %}
 
-    
+
     <!-- ATS WORK EXPERIENCE -->
     {% if experience %}
     <h2>WORK EXPERIENCE</h2>
     {% for exp in experience %}
     <div class="row">
-        <strong>{{ exp.role }} | {{ exp.company }},</strong>&nbsp;<span class="location">{{ exp.location }}</span>
+        <div class="entry-info">
+            <strong>{{ exp.role }} | {{ exp.company }}</strong>&nbsp;<span class="location">{{ exp.location }}</span>
+        </div>
         <span class="date">{{ exp.period }}</span>
     </div>
     <ul>
@@ -63,14 +67,17 @@
     {% endfor %}
     {% endif %}
 
-    
+
     <!-- ATS ORGANIZATIONAL EXPERIENCE -->
     {% if organizations %}
     <h2>ORGANIZATIONAL EXPERIENCE</h2>
     {% for org in organizations %}
 
     <div class="row">
-        <strong>{{ org.role }} | {{ org.organization }},</strong>&nbsp;<span class="location">{{ org.location }}</span>
+        <div class="entry-info">
+            <strong>{{ org.role }} | {{ org.organization }}</strong>&nbsp;<span class="location">{{ org.location
+                }}</span>
+        </div>
         <span class="date">{{ org.period }}</span>
     </div>
     <ul>
@@ -86,8 +93,10 @@
     <h2>PROJECTS</h2>
     {% for project in projects %}
     <div class="row">
-
-        <strong>{{ project.title }}</strong>&nbsp;| {{ project.stack }}
+        <div class="project-info">
+            <strong>{{ project.title }}</strong>&nbsp;<span class="stack-separator">|</span>&nbsp;<span class="stack">{{
+                project.stack }}</span>
+        </div>
         <span class="date">{{ project.date }}</span>
     </div>
     <ul>

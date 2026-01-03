@@ -141,10 +141,11 @@ create_cv(data, template_type="creative", output_path="cv_yourname_creative.pdf"
 
 <div align="center">
 
-### Creative Template
-
-<img src="img/creative-example-cvgue.png" alt="Creative CV Example" width="600px">
-
+| ATS Template | Creative Template |
+|:---:|:---:|
+| [Example ATS Template](/example/cv_budisantoso.pdf) | [Example Creative Template](/example/cv_putri_creative.pdf) |
+| <img src="img/ats-example-cvgue.png" alt="ATS CV Example" width="350px"> | <img src="img/creative-example-cvgue.png" alt="Creative CV Example" width="350px"> |
+| *Clean & ATS-friendly CV optimized for applicant tracking systems* | *Modern & visually expressive CV with sidebar layout* |
 
 </div>
 
