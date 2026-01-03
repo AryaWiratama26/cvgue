@@ -137,7 +137,7 @@ data = {
 create_cv(data, template_type="creative", output_path="cv_yourname_creative.pdf")
 ```
 
-## Example Output
+### Example Output
 
 <div align="center">
 
@@ -148,4 +148,13 @@ create_cv(data, template_type="creative", output_path="cv_yourname_creative.pdf"
 | *Clean & ATS-friendly CV optimized for applicant tracking systems* | *Modern & visually expressive CV with sidebar layout* |
 
 </div>
+
+
+### Contributing
+
+Feel free to submit a pull request or open an issue if you find any bugs or have suggestions for new features.
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
