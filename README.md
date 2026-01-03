@@ -23,6 +23,7 @@ pip install cvgue
 
 ### Usage
 
+#### Creative Template Usage
 ```python
 from cvgue import create_cv
 
@@ -135,6 +136,92 @@ data = {
 
 # Generate creative CV
 create_cv(data, template_type="creative", output_path="cv_yourname_creative.pdf")
+
+```
+
+#### ATS Template Usage
+
+```python
+from cvgue import create_cv
+
+# Your Data
+
+data = {
+
+    "name": "your_name",
+    "location": "your_location",
+    "phone": "your_phone",
+    "email": "your_email",
+    "linkedin": "your_linkedin",
+    "website": "your_website",
+
+    "summary": "your_summary",
+
+    "education": [
+        {
+            "institution": "your_institution",
+            "degree": "your_degree",
+            "gpa": "your_gpa",
+            "period": "your_period"
+        }
+    ],
+
+    "experience": [
+        {
+            "role": "your_role",
+            "company": "your_company",
+            "period": "your_period",
+            "points": [
+                "your_points",
+                "your_points"
+            ]
+        }
+    ],
+
+    "organizations": [
+        {
+            "role": "your_role",
+            "organization": "your_organization",
+            "period": "your_period",
+            "points": [
+                "your_points",
+                "your_points"
+            ]
+        }
+    ],
+
+    "projects": [
+        {
+            "title": "your_project_title",
+            "stack": "your_stack",
+            "date": "your_date",
+            "points": [
+                "your_points",
+                "your_points"
+            ]
+        },
+        
+    ],
+
+    "skills": {
+        "hard": ["your_skills"],
+        "soft": ["your_skills"]
+    },
+
+    "certifications": [
+        "your_certifications",
+        "your_certifications",
+        "your_certifications"
+    ],
+
+    "languages": [
+        "your_language",
+        "your_language"
+    ]
+}
+
+# Generate ATS CV
+create_cv(data, template_type="ats", output_path="cv_yourname_ats.pdf")
 ```
 
 ### Example Output
