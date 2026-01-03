@@ -15,3 +15,8 @@ cvgue_docs_website
 
 # Dummy Image
 dummy-image.jpeg
+
+# PyPI build files
+build/
+dist/
+cvgue.egg-info/
