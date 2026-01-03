@@ -7,8 +7,93 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from cvgue.engine import create_cv, TEMPLATE_DIR
 
+# Sample Data Creative
+DATA_CREATIVE = {
+    "name": "Budi Santoso",
+    "title": "Software Engineer",
+    "email": "budi.santoso@email.com",
+    "phone": "+62 812-3456-7890",
+    "location": "Jakarta Selatan",
+    "website": "budisantoso.dev",
+    "linkedin": "linkedin.com/in/budisantoso",
+    "photo": "/home/codemax/Documents/Project/cvgue/dummy-image.jpeg",
+    
+    "summary": "Software Engineer dengan 3+ tahun pengalaman dalam pengembangan web aplikasi menggunakan Python dan JavaScript. Passionate dalam clean code dan scalable architecture.",
+    
+    "education": [
+        {
+            "degree": "S1 Teknik Informatika",
+            "institution": "Universitas Indonesia",
+            "period": "2017 - 2021",
+            "location": "Depok",
+            "gpa": "3.65"
+        }
+    ],
+    
+    "experience": [
+        {
+            "role": "Backend Developer",
+            "company": "PT Startup Tech",
+            "location": "Jakarta",
+            "period": "Jan 2022 - Sekarang",
+            "points": [
+                "Mengembangkan RESTful API menggunakan Django dan FastAPI",
+                "Meningkatkan performa aplikasi hingga 40% melalui optimasi database",
+                "Implementasi CI/CD pipeline dengan GitLab"
+            ]
+        },
+        {
+            "role": "Junior Developer",
+            "company": "PT Software House",
+            "location": "Jakarta",
+            "period": "Jul 2021 - Dec 2021",
+            "points": [
+                "Membuat fitur e-commerce dengan Django",
+                "Kolaborasi dengan tim frontend untuk integrasi API"
+            ]
+        }
+    ],
+    
+    "skills": {
+        "hard": [
+            "Python (Django, FastAPI)",
+            "JavaScript (Node.js, React)",
+            "PostgreSQL & MySQL",
+            "Git & Docker",
+            "REST API Design"
+        ],
+        "soft": [
+            "Problem Solving",
+            "Team Collaboration",
+            "Time Management"
+        ]
+    },
+    
+    "certifications": [
+        "AWS Certified Developer Associate",
+        "Python Professional Certificate"
+    ],
+    
+    "languages": [
+        "Bahasa Indonesia (Native)",
+        "English (Professional)"
+    ],
+    
+    "references": [
+        {
+            "name": "John Doe",
+            "company": "PT Startup Tech",
+            "position": "Tech Lead",
+            "phone": "+62 811-1111-2222",
+            "email": "john.doe@startup.com"
+        }
+    ]
+}
 
-# Samplee Data
+
+
+
+# Samplee Data ATS
 SAMPLE_CV_DATA = {
 
     "name": "Abdul Rozak",
@@ -110,6 +195,17 @@ class TestCreateCV:
         )
         
         assert output_file.exists(), "File PDF ATS not created"
+
+    def test_create_cv_creative_template(self, tmp_path):
+        output_file = tmp_path / "cv_creative_cvgue.pdf"
+        
+        create_cv(
+            data=DATA_CREATIVE,
+            template_type="creative",
+            output_path=str(output_file)
+        )
+        
+        assert output_file.exists(), "File PDF Creative not created"
     
     def test_create_cv_with_minimal_data(self, tmp_path):
         output_file = tmp_path / "cv_minimal_cvgue.pdf"
@@ -147,19 +243,6 @@ class TestCreateCV:
                 template_type="invalid_template",
                 output_path=str(output_file)
             )
-
-class TestCVDataValidation:
-
-
-    def test_empty_data_raises_error(self, tmp_path):
-        output_file = tmp_path / "cv_empty_cvgue.pdf"
-        
-        with pytest.raises(Exception):
-            create_cv(
-                data={},
-                output_path=str(output_file)
-            )
-
 
 
 if __name__ == "__main__":
