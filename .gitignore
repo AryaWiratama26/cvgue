@@ -2,7 +2,7 @@ venv/
 __pycache__
 
 # Example files
-*.pdf
+# *.pdf
 example.py
 test_creative.py
 
