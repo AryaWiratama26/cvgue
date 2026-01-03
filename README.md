@@ -137,10 +137,14 @@ data = {
 create_cv(data, template_type="creative", output_path="cv_yourname_creative.pdf")
 ```
 
-### Example Output
+## Example Output
 
-<p align="center">
-  <b>Creative CV Example</b>
-  <img src="img/creative-example-cvgue.png" alt="Creative CV Example" width="45%">
-</p>
+<div align="center">
+
+### Creative Template
+
+<img src="img/creative-example-cvgue.png" alt="Creative CV Example" width="600px">
+
+
+</div>
 
