@@ -5,7 +5,6 @@ with open("PYPI_README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-
     name="cvgue",
     version="0.1.0",
     packages=find_packages(),
@@ -15,7 +14,6 @@ setup(
             "templates/*/*.css",
         ]
     },
-    
     include_package_data=True,
     install_requires=[
         "jinja2",

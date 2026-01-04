@@ -17,19 +17,16 @@ DATA_CREATIVE = {
     "website": "budisantoso.dev",
     "linkedin": "linkedin.com/in/budisantoso",
     "photo": "/home/codemax/Documents/Project/cvgue/dummy-image.jpeg",
-    
     "summary": "Software Engineer dengan 3+ tahun pengalaman dalam pengembangan web aplikasi menggunakan Python dan JavaScript. Passionate dalam clean code dan scalable architecture.",
-    
     "education": [
         {
             "degree": "S1 Teknik Informatika",
             "institution": "Universitas Indonesia",
             "period": "2017 - 2021",
             "location": "Depok",
-            "gpa": "3.65"
+            "gpa": "3.65",
         }
     ],
-    
     "experience": [
         {
             "role": "Backend Developer",
@@ -39,8 +36,8 @@ DATA_CREATIVE = {
             "points": [
                 "Mengembangkan RESTful API menggunakan Django dan FastAPI",
                 "Meningkatkan performa aplikasi hingga 40% melalui optimasi database",
-                "Implementasi CI/CD pipeline dengan GitLab"
-            ]
+                "Implementasi CI/CD pipeline dengan GitLab",
+            ],
         },
         {
             "role": "Junior Developer",
@@ -49,53 +46,39 @@ DATA_CREATIVE = {
             "period": "Jul 2021 - Dec 2021",
             "points": [
                 "Membuat fitur e-commerce dengan Django",
-                "Kolaborasi dengan tim frontend untuk integrasi API"
-            ]
-        }
+                "Kolaborasi dengan tim frontend untuk integrasi API",
+            ],
+        },
     ],
-    
     "skills": {
         "hard": [
             "Python (Django, FastAPI)",
             "JavaScript (Node.js, React)",
             "PostgreSQL & MySQL",
             "Git & Docker",
-            "REST API Design"
+            "REST API Design",
         ],
-        "soft": [
-            "Problem Solving",
-            "Team Collaboration",
-            "Time Management"
-        ]
+        "soft": ["Problem Solving", "Team Collaboration", "Time Management"],
     },
-    
     "certifications": [
         "AWS Certified Developer Associate",
-        "Python Professional Certificate"
+        "Python Professional Certificate",
     ],
-    
-    "languages": [
-        "Bahasa Indonesia (Native)",
-        "English (Professional)"
-    ],
-    
+    "languages": ["Bahasa Indonesia (Native)", "English (Professional)"],
     "references": [
         {
             "name": "John Doe",
             "company": "PT Startup Tech",
             "position": "Tech Lead",
             "phone": "+62 811-1111-2222",
-            "email": "john.doe@startup.com"
+            "email": "john.doe@startup.com",
         }
-    ]
+    ],
 }
-
-
 
 
 # Samplee Data ATS
 SAMPLE_CV_DATA = {
-
     "name": "Abdul Rozak",
     "email": "abdur.rozak@gmail.com",
     "phone": "+62 812 3456 7890",
@@ -109,7 +92,7 @@ SAMPLE_CV_DATA = {
             "institution": "Universitas Indonesia",
             "location": "Depok",
             "period": "2015 - 2019",
-            "gpa": "3.75"
+            "gpa": "3.75",
         }
     ],
     "experience": [
@@ -120,8 +103,8 @@ SAMPLE_CV_DATA = {
             "period": "2020 - Present",
             "points": [
                 "Developing web and mobile applications.",
-                "Leading a team of 5 developers."
-            ]
+                "Leading a team of 5 developers.",
+            ],
         }
     ],
     "organizations": [
@@ -130,7 +113,7 @@ SAMPLE_CV_DATA = {
             "organization": "Universitas Indonesia",
             "location": "Depok",
             "period": "2015 - 2019",
-            "points": ["Managing 100+ active members."]
+            "points": ["Managing 100+ active members."],
         }
     ],
     "projects": [
@@ -138,78 +121,72 @@ SAMPLE_CV_DATA = {
             "title": "E-Commerce Platform",
             "stack": "Python, Django, PostgreSQL",
             "date": "2023",
-            "points": ["Building e-commerce platform with 10K+ users."]
+            "points": ["Building e-commerce platform with 10K+ users."],
         }
     ],
     "skills": {
         "hard": ["Python", "JavaScript", "SQL", "Django", "React"],
-        "soft": ["Leadership", "Communication", "Problem Solving"]
+        "soft": ["Leadership", "Communication", "Problem Solving"],
     },
-
     "certifications": ["AWS Certified Developer", "Google Cloud Professional"],
-    "languages": ["Indonesian (Native)", "English (Fluent)"]
+    "languages": ["Indonesian (Native)", "English (Fluent)"],
 }
 
 
 class TestTemplateDirectory:
-    
+
     # Test template directory
     def test_template_dir_exists(self):
-        assert os.path.exists(TEMPLATE_DIR), f"Template directory not found: {TEMPLATE_DIR}"
-    
+        assert os.path.exists(
+            TEMPLATE_DIR
+        ), f"Template directory not found: {TEMPLATE_DIR}"
+
     def test_ats_template_exists(self):
 
         # Test template ATS
         ats_path = os.path.join(TEMPLATE_DIR, "ats")
         assert os.path.exists(ats_path), "Template ATS not found"
-        
+
         # Test template HTMLL
         template_html = os.path.join(ats_path, "template.html")
         styles_css = os.path.join(ats_path, "styles.css")
-        
+
         # Test templates.html and styles.css
         assert os.path.exists(template_html), "template.html not found in ATS"
         assert os.path.exists(styles_css), "styles.css not found in ATS"
 
 
 class TestCreateCV:
-    
+
     def test_create_cv_default_template(self, tmp_path):
         output_file = tmp_path / "test_cv_cvgue.pdf"
-        
-        create_cv(
-            data=SAMPLE_CV_DATA,
-            output_path=str(output_file)
-        )
-        
+
+        create_cv(data=SAMPLE_CV_DATA, output_path=str(output_file))
+
         assert output_file.exists(), "File PDF not created"
         assert output_file.stat().st_size > 0, "File PDF is empty"
-    
+
     def test_create_cv_ats_template(self, tmp_path):
         output_file = tmp_path / "cv_ats_cvgue.pdf"
-        
+
         create_cv(
-            data=SAMPLE_CV_DATA,
-            template_type="ats",
-            output_path=str(output_file)
+            data=SAMPLE_CV_DATA, template_type="ats", output_path=str(output_file)
         )
-        
+
         assert output_file.exists(), "File PDF ATS not created"
 
     def test_create_cv_creative_template(self, tmp_path):
         output_file = tmp_path / "cv_creative_cvgue.pdf"
-        
+
         create_cv(
-            data=DATA_CREATIVE,
-            template_type="creative",
-            output_path=str(output_file)
+            data=DATA_CREATIVE, template_type="creative", output_path=str(output_file)
         )
-        
+
         assert output_file.exists(), "File PDF Creative not created"
-    
+
     def test_create_cv_with_minimal_data(self, tmp_path):
         output_file = tmp_path / "cv_minimal_cvgue.pdf"
-        
+
         minimal_data = {
             "name": "Test User",
             "email": "",
@@ -224,24 +201,21 @@ class TestCreateCV:
             "projects": [],
             "skills": {"hard": [], "soft": []},
             "certifications": [],
-            "languages": []
+            "languages": [],
         }
-        
-        create_cv(
-            data=minimal_data,
-            output_path=str(output_file)
-        )
-        
+
+        create_cv(data=minimal_data, output_path=str(output_file))
+
         assert output_file.exists(), "File PDF not created with minimal data"
-    
+
     def test_create_cv_invalid_template_raises_error(self, tmp_path):
         output_file = tmp_path / "cv_invalid_cvgue.pdf"
-        
+
         with pytest.raises(Exception):
             create_cv(
                 data=SAMPLE_CV_DATA,
                 template_type="invalid_template",
-                output_path=str(output_file)
+                output_path=str(output_file),
             )
 
 
