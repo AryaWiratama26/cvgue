@@ -1,12 +1,12 @@
 from setuptools import find_packages, setup
-
+from cvgue import __version__
 
 with open("PYPI_README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
     name="cvgue",
-    version="0.1.0",
+    version=__version__,
     packages=find_packages(),
     package_data={
         "cvgue": [
