@@ -11,7 +11,7 @@ TEMPLATE_DIR = os.path.join(THIS_DIR, "templates")
 
 def create_cv(
     data: dict, template_type: TEMPLATE_TYPE = "ats", output_path: str = "cv.pdf"
-):
+) -> None:
 
     # TEMPLATE PATH
     template_path = os.path.join(TEMPLATE_DIR, template_type)
