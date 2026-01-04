@@ -1,5 +1,13 @@
 <div align="center">
   <img src="img/cvgue_logo_rounded.webp">
+  
+  [![PyPI version](https://badge.fury.io/py/cvgue.svg)](https://badge.fury.io/py/cvgue)
+  [![Python Version](https://img.shields.io/pypi/pyversions/cvgue.svg)](https://pypi.org/project/cvgue/)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![Downloads](https://static.pepy.tech/badge/cvgue)](https://pepy.tech/project/cvgue)
+  [![GitHub stars](https://img.shields.io/github/stars/AryaWiratama26/cvgue.svg)](https://github.com/AryaWiratama26/cvgue/stargazers)
+  [![GitHub issues](https://img.shields.io/github/issues/AryaWiratama26/cvgue.svg)](https://github.com/AryaWiratama26/cvgue/issues)
+  
 </div>
 
 
@@ -238,6 +246,13 @@ create_cv(data, template_type="ats", output_path="cv_yourname_ats.pdf")
 
 
 ### Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on:
+
+- Setting up the development environment
+- Running tests
+- Code style guidelines
+- Submitting pull requests
 
 Feel free to submit a pull request or open an issue if you find any bugs or have suggestions for new features.
 
