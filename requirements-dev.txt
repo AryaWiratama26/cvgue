@@ -1,0 +1,7 @@
+pytest
+pytest-cov
+black
+flake8
+twine
+build
+wheel
