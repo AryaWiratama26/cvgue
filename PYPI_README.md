@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/AryaWiratama26/cvgue/refs/heads/main/img/cvgue_logo_rounded.webp?token=GHSAT0AAAAAADPDYN6BQX4GFOT74AA6JUAK2KZJDYQ">
+  <img src="https://raw.githubusercontent.com/AryaWiratama26/cvgue/main/img/cvgue_logo_rounded.webp">
 </div>
 
 
@@ -231,7 +231,7 @@ create_cv(data, template_type="ats", output_path="cv_yourname_ats.pdf")
 | ATS Template | Creative Template |
 |:---:|:---:|
 | [Example ATS Template](https://github.com/AryaWiratama26/cvgue/blob/main/example/cv_budisantoso.pdf) | [Example Creative Template](https://github.com/AryaWiratama26/cvgue/blob/main/example/cv_putri_creative.pdf) |
-| <img src="https://raw.githubusercontent.com/AryaWiratama26/cvgue/refs/heads/main/img/ats-example-cvgue.png?token=GHSAT0AAAAAADPDYN6A5V6IU7AOC4YME37G2KZJEIQ" alt="ATS CV Example" width="350px"> | <img src="https://raw.githubusercontent.com/AryaWiratama26/cvgue/refs/heads/main/img/creative-example-cvgue.png?token=GHSAT0AAAAAADPDYN6ADBVFS7NCIRDMMIN42KZJE4Q" alt="Creative CV Example" width="350px"> |
+| <img src="https://raw.githubusercontent.com/AryaWiratama26/cvgue/main/img/ats-example-cvgue.png" alt="ATS CV Example" width="350px"> | <img src="https://raw.githubusercontent.com/AryaWiratama26/cvgue/main/img/creative-example-cvgue.png" alt="Creative CV Example" width="350px"> |
 | *Clean & ATS-friendly CV optimized for applicant tracking systems* | *Modern & visually expressive CV with sidebar layout* |
 
 </div>
